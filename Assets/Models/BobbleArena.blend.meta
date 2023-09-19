@@ -3,7 +3,17 @@ guid: ea2c2cc50f9776a4dbeaa9e32f1a4016
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Main_Texture
+    second: {fileID: 2100000, guid: b5f0e309658dfb9468ff9b8c1d68247e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Main_Texture__Bobble_Wars_Marine_texture_psd
+    second: {fileID: 2100000, guid: 7ca6ca7f2f216094fbbefd936b5e6d84, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
