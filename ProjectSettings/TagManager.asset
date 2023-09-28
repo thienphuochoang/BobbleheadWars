@@ -11,16 +11,16 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Alien
+  - Alien Head
   - PostProcessing
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Bullet
+  - Column
+  - Floor
+  - Head
+  - Player
+  - Wall
+  - Upgrade
   - 
   - 
   - 
