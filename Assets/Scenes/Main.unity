@@ -1173,6 +1173,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 531364860223578305, guid: ea2c2cc50f9776a4dbeaa9e32f1a4016,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ea2c2cc50f9776a4dbeaa9e32f1a4016,
         type: 3}
       propertyPath: m_Name
@@ -1591,6 +1596,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 50
   head: {fileID: 2036221315}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!143 &1866665083
 CharacterController:
   m_ObjectHideFlags: 0
