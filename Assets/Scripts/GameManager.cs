@@ -16,9 +16,41 @@ public class GameManager : MonoBehaviour
     private int aliensOnScreen = 0;
     private float generatedSpawnTime = 0;
     private float currentSpawnTime = 0;
+    public GameObject upgradePrefab;
+    public Gun gun;
+    public float upgradeMaxTimeSpawn = 7.5f;
+    private bool spawnedUpgrade = false;
+    private float actualUpgradeTime = 0;
+    private float currentUpgradeTime = 0;
+
+    private void Start()
+    {
+        actualUpgradeTime = UnityEngine.Random.Range(upgradeMaxTimeSpawn - 3.0f,
+            upgradeMaxTimeSpawn);
+        actualUpgradeTime = Mathf.Abs(actualUpgradeTime);
+    }
 
     private void Update()
     {
+        currentUpgradeTime += Time.deltaTime;
+        if (currentUpgradeTime > actualUpgradeTime)
+        {
+            // 1
+            if (!spawnedUpgrade)
+            {
+                // 2
+                int randomNumber = UnityEngine.Random.Range(0, spawnPoints.Length - 1);
+                GameObject spawnLocation = spawnPoints[randomNumber];
+                // 3
+                GameObject upgrade = Instantiate(upgradePrefab) as GameObject;
+                Upgrade upgradeScript = upgrade.GetComponent<Upgrade>();
+                upgradeScript.gun = gun;
+                upgrade.transform.position = spawnLocation.transform.position;
+                // 4
+                spawnedUpgrade = true;
+                SoundManager.Instance.PlayOneShot(SoundManager.Instance.powerUpAppear);
+            }
+        }
         //currentSpawnTime time passed since last spawn call
         currentSpawnTime += Time.deltaTime;
         // condition to generate a new wave of aliens
