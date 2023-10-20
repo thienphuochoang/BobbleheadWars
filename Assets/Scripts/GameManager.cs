@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     private bool spawnedUpgrade = false;
     private float actualUpgradeTime = 0;
     private float currentUpgradeTime = 0;
-
+    public GameObject deathFloor;
     private void Start()
     {
         actualUpgradeTime = UnityEngine.Random.Range(upgradeMaxTimeSpawn - 3.0f,
@@ -125,6 +125,7 @@ public class GameManager : MonoBehaviour
                             newAlien.transform.position.y, player.transform.position.z);
                         newAlien.transform.LookAt(targetRotation);
                         alienScript.OnDestroy.AddListener(AlienDestroyed);
+                        alienScript.GetDeathParticles().SetDeathFloor(deathFloor);
                     }
                 }
             }
